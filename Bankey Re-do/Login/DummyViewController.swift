@@ -38,6 +38,7 @@ extension DummyViewController {
         
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.setTitle("Logout", for: [])
+        logoutButton.configuration = .filled()
         logoutButton.addTarget(self, action: #selector(logoutButtonPressed), for: .primaryActionTriggered)
         
          

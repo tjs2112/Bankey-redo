@@ -52,14 +52,14 @@ class MainViewController: UITabBarController {
     }
     
 }
-
-class AccountSummaryViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
+// Dummy View Controller to build and test Main ViewController
+//class AccountSummaryViewController: UIViewController {
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = .systemGreen
+//    }
+//}
 
 class MoveMoneyViewController: UIViewController {
     

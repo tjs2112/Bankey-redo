@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
-    let dummyViewController = DummyViewController()
     let mainViewController = MainViewController()
+    let accountSummaryViewController = AccountSummaryViewController()
 
     
     
@@ -30,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         
         loginViewController.delegate = self
-        window?.rootViewController = loginViewController
+        window?.rootViewController = accountSummaryViewController
+//        window?.rootViewController = loginViewController
 //        window?.rootViewController = mainViewController
         onboardingContainerViewController.delegate = self
-        dummyViewController.logoutDelegate = self
 //        window?.rootViewController = onboardingContainerViewController
 //        window?.rootViewController = OnboardingViewController()
         

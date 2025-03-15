@@ -38,6 +38,11 @@ extension AccountSummaryViewController {
 //        tableView.dataSource = self // automatically defined
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
+        tableView.rowHeight = AccountSummaryCell.rowHeight
+        tableView.tableFooterView = UIView()  // Strange but actually hides the footer
+        
 //        view.addSubview(tableView) now automatically loaded
    
         
@@ -71,8 +76,7 @@ extension AccountSummaryViewController {  //  Datasource
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
  
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as! AccountSummaryCell
         return cell
     }
 }

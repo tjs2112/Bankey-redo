@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		304E059D2D84611F00D79A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304E05962D84611F00D79A8E /* Assets.xcassets */; };
-		304E059E2D84611F00D79A8E /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 304E05972D84611F00D79A8E /* File.txt */; };
 		304E05A02D84611F00D79A8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304E059A2D84611F00D79A8E /* LaunchScreen.storyboard */; };
 		304E05A12D84611F00D79A8E /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E058A2D84611F00D79A8E /* AccountSummaryViewController.swift */; };
 		304E05A22D84611F00D79A8E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E058C2D84611F00D79A8E /* LoginView.swift */; };
@@ -34,7 +33,6 @@
 		304E05932D84611F00D79A8E /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		304E05952D84611F00D79A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		304E05962D84611F00D79A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		304E05972D84611F00D79A8E /* File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		304E05982D84611F00D79A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		304E05992D84611F00D79A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		304E059B2D84611F00D79A8E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				304E05962D84611F00D79A8E /* Assets.xcassets */,
-				304E05972D84611F00D79A8E /* File.txt */,
 				304E059A2D84611F00D79A8E /* LaunchScreen.storyboard */,
 			);
 			path = files;
@@ -213,7 +210,6 @@
 			files = (
 				304E05B02D846C1900D79A8E /* AccountSummaryHeaderView.xib in Resources */,
 				304E059D2D84611F00D79A8E /* Assets.xcassets in Resources */,
-				304E059E2D84611F00D79A8E /* File.txt in Resources */,
 				304E05A02D84611F00D79A8E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

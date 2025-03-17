@@ -18,7 +18,15 @@ class AccountSummaryCell: UITableViewCell {
     struct ViewModel {
         let accountType: AccountType
         let accountName: String
+        let balance: Decimal
+        
+        var balanceAttributedString: NSAttributedString {
+            
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
     }
+    
+    let currencyFormatter = CurrencyFormatter()
     
     let viewModel: ViewModel? = nil
         
@@ -78,7 +86,7 @@ extension AccountSummaryCell {
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
 //        balanceLabel.adjustsFontForContentSizeCategory = true
         balanceAmountLabel.textAlignment = .right
-        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,466", cents: "63")
+        balanceAmountLabel.attributedText = NSAttributedString()
         
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
         chevronImageView.tintColor = appColor
@@ -128,18 +136,18 @@ extension AccountSummaryCell {
         ])
     }
     
-    private func makeFormattedBalance(dollars: String, cents: String) -> NSAttributedString {
-        
-        let dollarSignAttriutes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
-        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
-        
-        let rootString = NSMutableAttributedString(string: "$", attributes: dollarAttributes)
-        rootString.append(NSAttributedString(string: dollars, attributes: dollarAttributes))
-        rootString.append(NSAttributedString(string: cents, attributes: centAttributes))
-        
-        return rootString
-    }
+//    private func makeFormattedBalance(dollars: String, cents: String) -> NSAttributedString {
+//        
+//        let dollarSignAttriutes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
+//        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+//        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+//        
+//        let rootString = NSMutableAttributedString(string: "$", attributes: dollarAttributes)
+//        rootString.append(NSAttributedString(string: dollars, attributes: dollarAttributes))
+//        rootString.append(NSAttributedString(string: cents, attributes: centAttributes))
+//        
+//        return rootString
+//    }
 }
 
 extension AccountSummaryCell {
@@ -161,5 +169,8 @@ extension AccountSummaryCell {
         }
         
         nameLabel.text = vm.accountName
+        
+        balanceLabel.attributedText = vm.balanceAttributedString
+        
     }
 }

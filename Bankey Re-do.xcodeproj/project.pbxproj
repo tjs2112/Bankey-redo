@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		303039D42D8738A600413FA4 /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303039D32D87389100413FA4 /* DecimalUtils.swift */; };
+		303039D62D87393100413FA4 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303039D52D87392800413FA4 /* CurrencyFormatter.swift */; };
 		304E059D2D84611F00D79A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304E05962D84611F00D79A8E /* Assets.xcassets */; };
 		304E05A02D84611F00D79A8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304E059A2D84611F00D79A8E /* LaunchScreen.storyboard */; };
 		304E05A12D84611F00D79A8E /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E058A2D84611F00D79A8E /* AccountSummaryViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		303039D32D87389100413FA4 /* DecimalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtils.swift; sourceTree = "<group>"; };
+		303039D52D87392800413FA4 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		304E058A2D84611F00D79A8E /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		304E058C2D84611F00D79A8E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		304E058D2D84611F00D79A8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 		304E05942D84611F00D79A8E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				303039D52D87392800413FA4 /* CurrencyFormatter.swift */,
+				303039D32D87389100413FA4 /* DecimalUtils.swift */,
 				304E05922D84611F00D79A8E /* LocalState.swift */,
 				304E05932D84611F00D79A8E /* UIViewController+Utils.swift */,
 			);
@@ -227,9 +233,11 @@
 				304E05A22D84611F00D79A8E /* LoginView.swift in Sources */,
 				304E05A32D84611F00D79A8E /* LoginViewController.swift in Sources */,
 				304E05A42D84611F00D79A8E /* OnboardingContainerViewController.swift in Sources */,
+				303039D62D87393100413FA4 /* CurrencyFormatter.swift in Sources */,
 				304E05A52D84611F00D79A8E /* OnboardingViewController.swift in Sources */,
 				304E05A62D84611F00D79A8E /* LocalState.swift in Sources */,
 				304E05A72D84611F00D79A8E /* UIViewController+Utils.swift in Sources */,
+				303039D42D8738A600413FA4 /* DecimalUtils.swift in Sources */,
 				304E05A82D84611F00D79A8E /* AppDelegate.swift in Sources */,
 				304E05A92D84611F00D79A8E /* MainViewController.swift in Sources */,
 			);

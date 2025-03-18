@@ -1,6 +1,6 @@
 //
 //  OnboardingViewController.swift
-//  Bankey Re-do
+//  BankeyRedo
 //
 //  Created by Todd Smith on 3/11/25.
 //

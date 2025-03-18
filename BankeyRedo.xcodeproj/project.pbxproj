@@ -96,7 +96,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		304E059C2D84611F00D79A8E /* Bankey Re-do */ = {
+		304E059C2D84611F00D79A8E /* BankeyRedo */ = {
 			isa = PBXGroup;
 			children = (
 				304E058E2D84611F00D79A8E /* Login */,
@@ -108,7 +108,7 @@
 				304E059B2D84611F00D79A8E /* MainViewController.swift */,
 				304E05982D84611F00D79A8E /* Info.plist */,
 			);
-			path = "Bankey Re-do";
+			path = BankeyRedo;
 			sourceTree = "<group>";
 		};
 		304E05AA2D84615A00D79A8E /* files */ = {
@@ -140,7 +140,7 @@
 		30C523272D774FC600C4B7D2 = {
 			isa = PBXGroup;
 			children = (
-				304E059C2D84611F00D79A8E /* Bankey Re-do */,
+				304E059C2D84611F00D79A8E /* BankeyRedo */,
 				30C523312D774FC600C4B7D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Bankey Re-do/Info.plist";
+				INFOPLIST_FILE = BankeyRedo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -275,7 +275,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ironcoding.Bankey-Re-do";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ironcoding.BankeyRedo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -291,7 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Bankey Re-do/Info.plist";
+				INFOPLIST_FILE = BankeyRedo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -301,7 +301,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ironcoding.Bankey-Re-do";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ironcoding.BankeyRedo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,6 +1,6 @@
 //
 //  CurrencyFormatter.swift
-//  Bankey Re-do
+//  BankeyRedo
 //
 //  Created by Todd Smith on 3/16/25.
 //

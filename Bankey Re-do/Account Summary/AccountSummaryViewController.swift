@@ -34,6 +34,7 @@ extension AccountSummaryViewController {
 //        tableView.delegate = self  // automatically defined
 //        tableView.dataSource = self // automatically defined
         
+        tableView.backgroundColor = appColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)

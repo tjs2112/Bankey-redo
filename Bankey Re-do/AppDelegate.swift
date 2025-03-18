@@ -30,12 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         
         loginViewController.delegate = self
-        window?.rootViewController = accountSummaryViewController
+//        window?.rootViewController = accountSummaryViewController
 //        window?.rootViewController = loginViewController
 //        window?.rootViewController = mainViewController
         onboardingContainerViewController.delegate = self
 //        window?.rootViewController = onboardingContainerViewController
 //        window?.rootViewController = OnboardingViewController()
+        
+        let vc = mainViewController
+        vc.setstatusBar()
+       
+        // Appears to be not needed with change of setStatusBar to UINavigationAppearance()
+//        UINavigationBar.appearance().isTranslucent = false
+//        UINavigationBar.appearance().backgroundColor = appColor
+        
+        window?.rootViewController = vc
+        
         
         return true
     }

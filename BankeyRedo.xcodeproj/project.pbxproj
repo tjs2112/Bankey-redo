@@ -25,9 +25,20 @@
 		304E05B42D85C7BA00D79A8E /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E05B32D85C7A900D79A8E /* AccountSummaryCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		303039DF2D89339500413FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30C523282D774FC600C4B7D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30C5232F2D774FC600C4B7D2;
+			remoteInfo = "Bankey Re-do";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		303039D32D87389100413FA4 /* DecimalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtils.swift; sourceTree = "<group>"; };
 		303039D52D87392800413FA4 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		303039DB2D89339500413FA4 /* Bankey Re-doUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bankey Re-doUnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		304E058A2D84611F00D79A8E /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		304E058C2D84611F00D79A8E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		304E058D2D84611F00D79A8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +57,22 @@
 		30C523302D774FC600C4B7D2 /* Bankey Re-do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bankey Re-do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		303039DC2D89339500413FA4 /* Bankey Re-doUnitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Bankey Re-doUnitTests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		303039D82D89339500413FA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30C5232D2D774FC600C4B7D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				304E059C2D84611F00D79A8E /* Bankey Re-do */,
+				303039DC2D89339500413FA4 /* Bankey Re-doUnitTests */,
 				30C523312D774FC600C4B7D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				30C523302D774FC600C4B7D2 /* Bankey Re-do.app */,
+				303039DB2D89339500413FA4 /* Bankey Re-doUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +184,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		303039DA2D89339500413FA4 /* Bankey Re-doUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 303039E12D89339500413FA4 /* Build configuration list for PBXNativeTarget "Bankey Re-doUnitTests" */;
+			buildPhases = (
+				303039D72D89339500413FA4 /* Sources */,
+				303039D82D89339500413FA4 /* Frameworks */,
+				303039D92D89339500413FA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				303039E02D89339500413FA4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				303039DC2D89339500413FA4 /* Bankey Re-doUnitTests */,
+			);
+			name = "Bankey Re-doUnitTests";
+			packageProductDependencies = (
+			);
+			productName = "Bankey Re-doUnitTests";
+			productReference = 303039DB2D89339500413FA4 /* Bankey Re-doUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		30C5232F2D774FC600C4B7D2 /* Bankey Re-do */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30C523432D774FC800C4B7D2 /* Build configuration list for PBXNativeTarget "Bankey Re-do" */;
@@ -185,12 +236,17 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					303039DA2D89339500413FA4 = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+						TestTargetID = 30C5232F2D774FC600C4B7D2;
+					};
 					30C5232F2D774FC600C4B7D2 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 30C5232B2D774FC600C4B7D2 /* Build configuration list for PBXProject "Bankey Re-do" */;
+			buildConfigurationList = 30C5232B2D774FC600C4B7D2 /* Build configuration list for PBXProject "BankeyRedo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -205,11 +261,19 @@
 			projectRoot = "";
 			targets = (
 				30C5232F2D774FC600C4B7D2 /* Bankey Re-do */,
+				303039DA2D89339500413FA4 /* Bankey Re-doUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		303039D92D89339500413FA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30C5232E2D774FC600C4B7D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +287,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		303039D72D89339500413FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30C5232C2D774FC600C4B7D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +316,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		303039E02D89339500413FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30C5232F2D774FC600C4B7D2 /* Bankey Re-do */;
+			targetProxy = 303039DF2D89339500413FA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		304E059A2D84611F00D79A8E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -257,6 +336,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		303039E22D89339500413FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ironcoding.Bankey-Re-doUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bankey Re-do.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bankey Re-do";
+			};
+			name = Debug;
+		};
+		303039E32D89339500413FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ironcoding.Bankey-Re-doUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bankey Re-do.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bankey Re-do";
+			};
+			name = Release;
+		};
 		30C523442D774FC800C4B7D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,7 +547,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		30C5232B2D774FC600C4B7D2 /* Build configuration list for PBXProject "Bankey Re-do" */ = {
+		303039E12D89339500413FA4 /* Build configuration list for PBXNativeTarget "Bankey Re-doUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303039E22D89339500413FA4 /* Debug */,
+				303039E32D89339500413FA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30C5232B2D774FC600C4B7D2 /* Build configuration list for PBXProject "BankeyRedo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30C523462D774FC800C4B7D2 /* Debug */,

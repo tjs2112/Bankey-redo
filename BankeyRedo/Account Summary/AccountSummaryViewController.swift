@@ -11,6 +11,17 @@ class AccountSummaryViewController: UITableViewController {
     
     var accounts: [AccountSummaryCell.ViewModel] = []
     
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        
+        let barButtonItem = UIBarButtonItem(
+            title: "Logout",
+            style: .plain,
+            target: self,
+            action: #selector(logoutTapped))
+        barButtonItem.tintColor = .label
+        return barButtonItem
+    }()
+    
 //    let tableView = UITableView()  //  instance created automatically
         
     override func viewDidLoad() {
@@ -26,7 +37,13 @@ extension AccountSummaryViewController {
         
         setupTableView()
         setupTableHeaderView()
+        configureNavigationBar()
         fetchData()
+    }
+    
+    private func configureNavigationBar() {
+        
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
     
     private func setupTableView() {
@@ -41,7 +58,7 @@ extension AccountSummaryViewController {
         tableView.rowHeight = AccountSummaryCell.rowHeight
         tableView.tableFooterView = UIView()  // Strange but actually hides the footer
         
-//        view.addSubview(tableView) now automatically loaded
+//        view.addSubview(tableView) // now automatically loaded
    
         
         // Seems that UITableViewController automatically comes with layout constraints
@@ -106,5 +123,13 @@ extension AccountSummaryViewController {
         accounts.append(investment1)
         accounts.append(investment2)
             
+    }
+}
+
+// MARK: - Actions
+extension AccountSummaryViewController {
+    
+    @objc func logoutTapped() {
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }

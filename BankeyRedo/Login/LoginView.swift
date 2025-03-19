@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class LoginView: UIView {
     
     let stackView = UIStackView()
@@ -47,6 +48,8 @@ extension   LoginView {
         passwordtextField.placeholder = "password"
         passwordtextField.isSecureTextEntry = true
         passwordtextField.delegate = self
+        passwordtextField.enablePasswordToggle()
+        
         
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .secondarySystemFill

@@ -69,7 +69,7 @@ extension AccountSummaryCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.text = "Account Name"
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,9 +78,11 @@ extension AccountSummaryCell {
         
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
-//        balanceLabel.adjustsFontForContentSizeCategory = true
+        balanceLabel.adjustsFontSizeToFitWidth = true
+
         balanceLabel.textAlignment = .right
         balanceLabel.text = "Some balance"
+        
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -126,7 +128,7 @@ extension AccountSummaryCell {
         
         NSLayoutConstraint.activate([
             balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.topAnchor, multiplier: 0),
-            balanceLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: nameLabel.trailingAnchor, multiplier: 4),
+            balanceStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: nameLabel.trailingAnchor, multiplier: 4),
             chevronImageView.leadingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 2)
         ])
         
@@ -170,7 +172,7 @@ extension AccountSummaryCell {
         
         nameLabel.text = vm.accountName
         
-        balanceLabel.attributedText = vm.balanceAttributedString
+        balanceAmountLabel.attributedText = vm.balanceAttributedString
         
     }
 }

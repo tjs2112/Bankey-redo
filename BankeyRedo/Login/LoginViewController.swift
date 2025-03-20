@@ -38,11 +38,24 @@ protocol LogoutDelegate: AnyObject {
             return loginView.passwordtextField.text
         }
         
+        // Animation
+        var leadingEdgeOnScreen: CGFloat = 16
+        var leadingEdgeOffScreen: CGFloat = -1000
+        
+        var appTitleLeadingAnchor: NSLayoutConstraint?
+        var taglineLeadingAnchor: NSLayoutConstraint?
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             
             style()
             layout()
+        }
+        
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            
+            animate()
         }
         
         override func viewDidDisappear(_ animated: Bool) {
@@ -62,12 +75,14 @@ protocol LogoutDelegate: AnyObject {
             appTitleLabel.text = "Bankey"
             appTitleLabel.textAlignment = .center
             appTitleLabel.font = .systemFont(ofSize: 36, weight: .bold)
+            appTitleLabel.alpha = 0
             
             taglineLabel.translatesAutoresizingMaskIntoConstraints = false
             taglineLabel.text = "Your premium source for all things banking!"
             taglineLabel.numberOfLines = 0
             taglineLabel.textAlignment = .center
             taglineLabel.font = .systemFont(ofSize: 24, weight: .regular)
+            taglineLabel.alpha = 0
             
             loginView.translatesAutoresizingMaskIntoConstraints = false
             loginView.backgroundColor = .secondarySystemBackground
@@ -108,15 +123,22 @@ protocol LogoutDelegate: AnyObject {
             //  Edge to edge stack view with system spacing
             NSLayoutConstraint.activate([
                 taglineLabel.topAnchor.constraint(equalToSystemSpacingBelow: appTitleLabel.bottomAnchor, multiplier: 2),
-                appTitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+//                appTitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),  // to enable animation
                 appTitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
             ])
             
+            // Set initial off screen position for animation
+            appTitleLeadingAnchor = appTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+            appTitleLeadingAnchor?.isActive = true
+            
             NSLayoutConstraint.activate([
                 loginView.topAnchor.constraint(equalToSystemSpacingBelow: taglineLabel.bottomAnchor, multiplier: 2),
-                taglineLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
                 taglineLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
             ])
+            
+            // Set initial off screen position for animation
+            taglineLeadingAnchor = taglineLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+            taglineLeadingAnchor?.isActive = true
 
             NSLayoutConstraint.activate([
                 loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -189,5 +211,34 @@ extension LoginViewController {
     }
 }
 
+// MARK: - Animations
 
+extension LoginViewController {
+    
+    private func animate() {
+        let duration = 0.8
+        let animator1 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+            self.appTitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        
+        let animator2 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+            self.taglineLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        
+        let animator3 = UIViewPropertyAnimator(duration: duration * 2, curve: .easeInOut) {
+            self.appTitleLabel.alpha = 1
+            self.taglineLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        
+        animator1.startAnimation()
+        
+        animator2.startAnimation(afterDelay: 0.2)
+        
+        animator3.startAnimation(afterDelay: 0.2)
+        
+    }
+}
 

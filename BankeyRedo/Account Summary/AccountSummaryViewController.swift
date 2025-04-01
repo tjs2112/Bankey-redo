@@ -33,7 +33,6 @@ class AccountSummaryViewController: UITableViewController {
     
     var isLoaded = false
     
-    
     lazy var logoutBarButtonItem: UIBarButtonItem = {
         
         let barButtonItem = UIBarButtonItem(
@@ -57,6 +56,7 @@ class AccountSummaryViewController: UITableViewController {
 extension AccountSummaryViewController {
     
     private func setupRefreshControl() {
+        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshData), for: .primaryActionTriggered)
         self.refreshControl = refreshControl
@@ -70,7 +70,6 @@ extension AccountSummaryViewController {
         setupRefreshControl()
         setupSkeletons()
         configureTableCells(with: accounts)
-
         fetchData()
     }
     
@@ -117,6 +116,7 @@ extension AccountSummaryViewController {
 }
 
 extension AccountSummaryViewController {  //  Datasource
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         print("Accounts AccountCellViewModels count\(accountCellViewModels.count)")
@@ -127,8 +127,6 @@ extension AccountSummaryViewController {  //  Datasource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard !accountCellViewModels.isEmpty else {return UITableViewCell()}
-        
-        
         if isLoaded {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as! AccountSummaryCell
@@ -139,6 +137,7 @@ extension AccountSummaryViewController {  //  Datasource
         print("CellForRowAt loaded is false")
         let cell = tableView.dequeueReusableCell(withIdentifier: SkeletonCell.reuseID, for: indexPath) as! SkeletonCell
         cell.configure(with: accountCellViewModels[indexPath.row])
+        
         return cell
     }
 }

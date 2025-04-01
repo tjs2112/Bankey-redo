@@ -20,6 +20,17 @@ class AccountSummaryViewController: UITableViewController {
     // Components
     var headerView = AccountSummaryHeaderView(frame: .zero)
     
+    // Networking
+    var profileManager: ProfileManageable = ProfileManager()
+    
+    // Error Alert
+    lazy var errorAlert: UIAlertController = {
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
+    
     var isLoaded = false
     
     
@@ -139,10 +150,8 @@ extension AccountSummaryViewController { // Delegate
     }
 }
 
-
-
-
 // MARK: - Networking
+
 extension AccountSummaryViewController {
     
     private func fetchData() {
@@ -150,65 +159,81 @@ extension AccountSummaryViewController {
         let group = DispatchGroup()
         let randomProfileID = String(Int.random(in: 1..<4))  // just for testing UIRefreshControl
         
+        fetchProfile(group: group, userID: randomProfileID)
+        fetchAccounts(group: group, userID: randomProfileID)
+        
+        group.notify(queue: .main) {
+            self.reloadView()
+        }
+    }
+    
+    private func fetchProfile(group: DispatchGroup, userID: String) {
+        
         group.enter()
-        fetchProfile(forUserID: randomProfileID) { result in
+        profileManager.fetchProfile(forUserID: userID) { result in
             
             switch result {
             case .success(let profile):
                 self.profile = profile
             case .failure(let error):
-                print("foo - failure")
-                print(error.localizedDescription)
+                let titleAndMessage = self.titleAndMessage(for: error)
+                self.showErrorAlert(title: titleAndMessage.0, message: titleAndMessage.1)
             }
             group.leave()
         }
+    }
+    
+    private func fetchAccounts(group: DispatchGroup, userID: String) {
         
         group.enter()
-        fetchAccounts(forUserID: randomProfileID) { result in
-            
-            let title: String
-            let message: String
+        fetchAccounts(forUserID: userID) { result in
             
             switch result {
             case .success(let accounts):
                 print("accounts success")
                 self.accounts = accounts
             case .failure(let error):
-                print(error.localizedDescription)
-                switch error {
-                    
-                case .serverError:
-                    title = "Server Error"
-                    message = "There was a Server Error.  Please try again later."
-                case .decodingError:
-                    title = "Decoding Error"
-                    message = "There was an error decoding data received.  Please contact the helpdesk with error \(error.localizedDescription)"
-                 }
-                self.showAlert(title: title, message: message)
+                let titleAndMessage = self.titleAndMessage(for: error)
+                
+                self.showErrorAlert(title: titleAndMessage.0, message: titleAndMessage.1)
             }
             group.leave()
         }
-        
-        group.notify(queue: .main) {
-            self.refreshControl?.endRefreshing()
-            self.isLoaded = true
-            if let profile = self.profile {
-                self.configureTableHeaderView(with: profile)
-            }
-            
-            self.configureTableCells(with: self.accounts)
-            self.tableView.reloadData()
-        }
-            
-
     }
     
-    private func showAlert(title: String, message: String) {
+    private func reloadView() {
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.tableView.refreshControl?.endRefreshing()
+        self.isLoaded = true
+        if let profile = self.profile {
+            self.configureTableHeaderView(with: profile)
+        }
+        self.configureTableCells(with: self.accounts)
+        self.tableView.reloadData()
+    }
+    
+    private func titleAndMessage(for error: NetworkError) -> (String, String) {
         
-        self.present(alert, animated: true)
+        let title: String
+        let message: String
+        
+        switch error {
+        case .serverError:
+            title = "Server Error"
+            message = "There was a Server Error.  Please try again later."
+        case .decodingError:
+            title = "Decoding Error"
+            message = "There was an error decoding data received.  Please contact the helpdesk with error."
+         }
+        return (title, message)
+    }
+    
+    private func showErrorAlert(title: String, message: String) {
+        
+        errorAlert.title = title
+        errorAlert.message = message
+        
+        self.present(errorAlert, animated: true)
     }
     
     
@@ -241,6 +266,7 @@ extension AccountSummaryViewController {
 }
 
 // MARK: - Actions
+
 extension AccountSummaryViewController {
     
     @objc func logoutTapped() {
@@ -264,3 +290,20 @@ extension AccountSummaryViewController {
         isLoaded = false
     }
 }
+
+// MARK: - Unit Testing
+
+extension AccountSummaryViewController {
+    
+    //  this is a way to allow unit testing of a private function without making the private function Public.  Easy to comment out and turn off if needed
+    func titleAndMessageForTesting(for error: NetworkError) -> (String, String) {
+        
+        return titleAndMessage(for: error)
+    }
+    
+    func forceFetchProfile() {
+        
+        fetchProfile(group: DispatchGroup(), userID: "1")
+    }
+}
+

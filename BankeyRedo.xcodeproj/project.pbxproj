@@ -30,6 +30,7 @@
 		30E6B8C52D93C8830003A1BE /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6B8C42D93C8670003A1BE /* AccountSummaryViewController+Networking.swift */; };
 		30E6B8D02D96D73F0003A1BE /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6B8CF2D96D7310003A1BE /* SkeletonLoadable.swift */; };
 		30E6B8D22D96FBB60003A1BE /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6B8D12D96FBB10003A1BE /* SkeletonCell.swift */; };
+		30E6B8D62D9AC9B40003A1BE /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6B8D52D9AC9A50003A1BE /* ProfileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,10 +70,11 @@
 		30E6B8C42D93C8670003A1BE /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		30E6B8CF2D96D7310003A1BE /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		30E6B8D12D96FBB10003A1BE /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		30E6B8D52D9AC9A50003A1BE /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		303039EE2D89484900413FA4 /* BankeyRedoUnitTests */ = {
+		30E6B8E72D9C1B3C0003A1BE /* BankeyRedoUnitTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BankeyRedoUnitTests;
 			sourceTree = "<group>";
@@ -100,6 +102,7 @@
 		304E058B2D84611F00D79A8E /* Account Summary */ = {
 			isa = PBXGroup;
 			children = (
+				30E6B8D32D9AC9950003A1BE /* Networking */,
 				304E058A2D84611F00D79A8E /* AccountSummaryViewController.swift */,
 				30E6B8C42D93C8670003A1BE /* AccountSummaryViewController+Networking.swift */,
 				304E05B12D85C75700D79A8E /* Header */,
@@ -188,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				304E059C2D84611F00D79A8E /* BankeyRedo */,
-				303039EE2D89484900413FA4 /* BankeyRedoUnitTests */,
+				30E6B8E72D9C1B3C0003A1BE /* BankeyRedoUnitTests */,
 				30C523312D774FC600C4B7D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -210,6 +213,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		30E6B8D32D9AC9950003A1BE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				30E6B8D52D9AC9A50003A1BE /* ProfileManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,7 +238,7 @@
 				303039F22D89484900413FA4 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				303039EE2D89484900413FA4 /* BankeyRedoUnitTests */,
+				30E6B8E72D9C1B3C0003A1BE /* BankeyRedoUnitTests */,
 			);
 			name = BankeyRedoUnitTests;
 			packageProductDependencies = (
@@ -336,6 +347,7 @@
 				30E6B8C52D93C8830003A1BE /* AccountSummaryViewController+Networking.swift in Sources */,
 				304E05A52D84611F00D79A8E /* OnboardingViewController.swift in Sources */,
 				303039FA2D8A14A800413FA4 /* NSNotificationName.swift in Sources */,
+				30E6B8D62D9AC9B40003A1BE /* ProfileManager.swift in Sources */,
 				30E6B8D22D96FBB60003A1BE /* SkeletonCell.swift in Sources */,
 				30E6B8D02D96D73F0003A1BE /* SkeletonLoadable.swift in Sources */,
 				304E05A62D84611F00D79A8E /* LocalState.swift in Sources */,

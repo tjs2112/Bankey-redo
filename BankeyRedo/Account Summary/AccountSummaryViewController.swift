@@ -64,7 +64,7 @@ extension AccountSummaryViewController {
     
     private func setup() {
         
-        setupTableView()
+        setupTableView()  // Register cells and row height
         setupTableHeaderView()
         configureNavigationBar()
         setupRefreshControl()
